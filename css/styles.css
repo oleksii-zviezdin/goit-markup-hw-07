@@ -6,7 +6,7 @@
 	--background-color-button: #2196f3;
 	--background-color-button-disactive: #f5f4fa;
 	--background-color-button-accent: #188ce8;
-	--background-color-team-caption: #ffffff;
+	--background-color-card__caption: #ffffff;
 	--background-color-card-content: #ffffff;
 	--background-color-socials-icons: #2196f3;
 	--background-color-socials-icons-footer: #ffffff1a;
@@ -38,7 +38,7 @@
 	/* <p> color */
 	--primary-text-color: #757575;
 
-	/* contact-footer */
+	/* footer__contacts */
 	--footer-contact-color: #ffffff99;
 	--address-text-color: #ffffff;
 
@@ -107,22 +107,22 @@ body {
 /* container style */
 .container {
 	/* display: flex; */
-	margin-right: auto;
-	margin-left: auto;
 	width: 1200px;
+	margin-right: auto;
+	margin-left: auto;	
 	padding-left: 15px;
 	padding-right: 15px;
 
 	/* outline: 1px solid red; to remove */
 }
 
-.section.no-padding-down {
-	padding-bottom: 0;
-}
-
 .section {
 	padding-top: 94px;
 	padding-bottom: 94px;
+}
+
+.benefits__section {
+	padding-bottom: 0;
 }
 
 img {
@@ -148,7 +148,7 @@ img {
 	border-bottom: 1px solid var(--border-botton-header);
 }
 
-.link-header {
+.header__link {
 	padding-top: 32px;
 	padding-bottom: 32px;
 }
@@ -165,30 +165,67 @@ img {
 	color: var(--accent-text-color);
 }
 
-.logo-header {
+.logo:hover,
+.logo:focus {
+	outline: none;
+}
+
+.logo--link {
+	text-decoration: none;
+}
+
+.logo__text {	
+	display: inline-block;
+	font-family: "Raleway";
+	font-weight: 700;
+	font-size: 26px;
+	line-height: 1.19;
+	letter-spacing: 0.03em;
+
+	color: var(--accent-text-color);
+}
+
+.logo__text--black {
 	color: var(--color-studio-header);
 }
 
-.logo-footer {
+.logo__text--white {
 	color: var(--color-studio-footer);
 }
 
 /* navigation site */
-.nav {
+.container--flex {
 	display: flex;
+}
+
+.header__container {
 	align-items: center;
 }
 
-.nav-link {
+.nav__link {
 	display: block;
+	text-decoration: none;
+	
 	color: var(--h-headline-text-color);
+		
+	transition: color var(--transform-and-animation);
 }
 
-.nav-list li {
+.nav__link:hover,
+.nav__link:focus {
+	outline: none;
+	color: var(--accent-text-color);
+}
+
+.nav__link--current {
+	color: var(--accent-text-color);
+}
+
+.nav__item {
 	position: relative;
 }
 
-.current::after {
+.nav__link--current::after {
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -204,18 +241,17 @@ img {
 	background-color: var(--accent-text-color);
 }
 
-.navigation {
+.header__nav {
 	margin-left: 90px;
 }
 
-.nav-list {
+.nav__list {
 	display: flex;
-	/* flex-wrap: wrap; */
 	gap: var(--width-gap-header);
 }
 
-.nav-list .link.current {
-	color: var(--accent-text-color);
+.nav__list--none-mark {
+	list-style: none;
 }
 
 .list {
@@ -233,13 +269,29 @@ img {
 	color: var(--accent-text-color);
 }
 
-.email,
-.smartphone {
+.contact {
+	margin-left: auto;
+}
+
+.contact__email,
+.contact__smartphone {
 	fill: currentColor;
 }
 
+.contact__link {
+	text-decoration: none;
+
+	transition: color var(--transform-and-animation);
+}
+
+.contact__link:hover,
+.contact__link:focus {
+	outline: none;
+	color: var(--accent-text-color);
+}
+
 /* contact header */
-.contact-header {
+.header__contact {
 	display: flex;
 	align-items: center;
 	gap: 10px;
@@ -247,11 +299,14 @@ img {
 	color: var(--primary-text-color);
 }
 
-.contact-list {
+.contact__list {
 	display: flex;
 	gap: var(--width-gap-list);
-	margin-left: auto;
 	align-items: center;
+}
+
+.contact__list--none-mark {
+	list-style: none;
 }
 
 .title {
@@ -268,7 +323,7 @@ img {
 
 /*-------------------------MAIN - HTML ------------------------*/
 /*-------------- hero section --------------*/
-.hero {
+.hero__section {
 	text-align: center;
 	color: var(--h1-headline-text-color);
 	background-color: var(--background-color-footer-hero);
@@ -293,15 +348,17 @@ img {
 	padding-bottom: 200px;
 }
 
-.hero-title {
-	margin-bottom: 30px;
-
+.hero__title {
 	font-weight: 900;
 	font-size: 44px;
 	line-height: 1.36;
 	text-align: center;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
+}
+
+.hero__title--mb {	
+	margin-bottom: 30px;
 }
 
 .button {
@@ -337,16 +394,12 @@ img {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-/*-------------- STRENGTHS SECTION --------------*/
+/*-------------- BENEFITS SECTION --------------*/
 .item {
 	min-width: 270px;
 }
 
-.no-wrap {
-	flex-wrap: nowrap;
-}
-
-.strengths-title {
+.benefits__sub-title {
 	margin-bottom: 10px;
 
 	font-weight: 700;
@@ -358,48 +411,83 @@ img {
 	color: var(--h-headline-text-color);
 }
 
-.strengths-description {
+.benefits__description {
 	font-size: 14px;
 	line-height: 1.7;
 	letter-spacing: 0.03em;
 }
 
-/* if delete class "gap-list" from <ul> element in the STRENGTHS SECTION and add class "strengths-list" we can use below code */
+/* if delete class "gap-list" from <ul> element in the STRENGTHS SECTION and add class "benefits-list__list" we can use below code */
 
-/* .strengths-list {
+/* .benefits-list__list {
 	display: flex;
 }
 
-.strengths-list li:not(:last-child) {
+.benefits-list__list li:not(:last-child) {
 	margin-right: 30px;
 } */
 
-.icon-list {
+.benefits__title {
+	margin-bottom: 50px;
+
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.17;
+	text-align: center;
+	letter-spacing: 0.03em;
+
+	color: var(--h-headline-text-color);
+}
+
+.benefits__list {
 	display: flex;
-	margin-bottom: 30px;
 	gap: 30px;
 }
 
-.icon {
+.benefits__item {
+	width: 100%;
+}
+
+.benefits__icon {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 270px;
 	height: 120px;
 
+	margin-bottom: 30px;
+
 	background-color: var(--background-color-icons-strengths);
 	border-radius: 4px;
 }
 /*-------------- WORK SECTION --------------*/
+.work__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--width-gap-list);
+}
 
-.work-items {
+.work__title {
+	margin-bottom: 50px;
+
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.17;
+	text-align: center;
+	letter-spacing: 0.03em;
+
+	color: var(--h-headline-text-color);
+}
+
+.work__card {
 	position: relative;
 	/* display: flex;    
 	justify-content: center; - не знаю чому ці властивості не діють на дітей flex нижче
 	align-items: center; */
 }
 
-.work-description {
+.work__description {
 	position: absolute;
 	bottom: 0;
 
@@ -424,11 +512,28 @@ img {
 
 /*-------------- TEAM SECTION --------------*/
 
-.team {
+.section--team {
 	background-color: var(--background-color-teams);
 }
 
-.team-title {
+.team__title {
+	margin-bottom: 50px;
+
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.17;
+	text-align: center;
+	letter-spacing: 0.03em;
+
+	color: var(--h-headline-text-color);
+}
+
+.team__list {
+	display: flex;
+	gap: 30px;
+}
+
+.card__title {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 1.19;
@@ -441,7 +546,7 @@ img {
 	color: var(--h-headline-text-color);
 }
 
-.team-description {
+.card__description {
 	font-size: 16px;
 	line-height: 1.19;
 	text-align: center;
@@ -451,18 +556,18 @@ img {
 	margin-bottom: 16px;
 }
 
-.team-caption {
+.card__caption {
 	padding-top: 30px;
 	padding-bottom: 30px;
 
 	text-align: center;
 
-	background-color: var(--background-color-team-caption);
+	background-color: var(--background-color-card__caption);
 
 	border-radius: 0px 0px 4px 4px;
 }
 
-.team-list > li {
+.team__item {
 	box-shadow: var(--card-box-shadow);
 	border-radius: 0px 0px 4px 4px;
 }
@@ -477,14 +582,16 @@ img {
 	margin-right: 30px;
 } */
 
-.socials {
+.socials__list {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
+
+	list-style: none;
 }
 
-.socials-link {
+.socials__link {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -498,38 +605,53 @@ img {
 	transition: color var(--transform-and-animation), background-color var(--transform-and-animation);
 }
 
-.socials-link.link:hover,
-.socials-link.link:focus {
+.socials__link:hover,
+.socials__link:focus {
 	color: var(--social-icons-active-color);
 	background-color: var(--background-color-socials-icons);
 }
 
-.socials-icon {
+
+.socials__icon {
 	fill: currentColor;
 }
 
 /* розширений варіант зміни кольору */
-/* .socials-icon {
+/* .socials__icon {
 	fill: var(--social-icons-color);
 }
 
-.socials-link:hover .socials-icon,
-.socials-link:focus .socials-icon {
+.socials__link:hover .socials__icon,
+.socials__link:focus .socials__icon {
 	fill: var(--social-icons-active-color);
 }
 
-.socials-link:hover,
-.socials-link:focus {
+.socials__link:hover,
+.socials__link:focus {
 	background-color: var(--background-color-socials-icons);
 } */
 
 /* COSTUMER */
 
-.costumer {
-	margin: 0;
+.costumer__title {
+	margin-bottom: 50px;
+
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.17;
+	text-align: center;
+	letter-spacing: 0.03em;
+
+	color: var(--h-headline-text-color);
+}	
+
+.costumer__list {
+	display: flex;
+	gap: 30px;
+	/* margin: 0; */
 }
 
-.costumer-link {
+.costumer__link {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -545,14 +667,14 @@ img {
 	transition: color var(--transform-and-animation), border-color var(--transform-and-animation);
 }
 
-.costumer-link:hover,
-.costumer-link:focus {
+.costumer__link:hover,
+.costumer__link:focus {
 	outline: none;
 	color: var(--costumer-accent-color);
 	border-color: var(--costumer-accent-color);
 }
 
-.costumer-icon {
+.costumer__icon {
 	fill: currentColor;
 }
 
@@ -575,40 +697,53 @@ img {
 	gap: 70px;
 }
 
-.address {
+.contacts__address {
 	font-style: normal;
 	color: var(--address-text-color);
 }
-.contact-footer {
+.contacts__list--none-mark {
+	list-style: none;
+}
+
+.contacts__link {
+	text-decoration: none;
+	transition: color var(--transform-and-animation);
+}
+
+.contacts__link:hover,
+.contacts__link:focus {
+	outline: none;
+	color: var(--accent-text-color);
+}
+
+.footer__contacts {
 	color: var(--footer-contact-color);
 }
 
-.logo-margin {
+.footer__logo {
 	margin-bottom: 20px;
 }
 
-.address-item + .address-item {
+.contacts__item + .contacts__item {
 	margin-top: 9px;
 }
 
-.address-link {
-	display: inline-block;
-}
-
-.footer-socials-link {
+.footer__socials {
 	padding-top: 12px;
 	padding-bottom: 40px;
+
+	margin-left: 70px;
 }
 
-.socials-footer {
-	display: flex;
+.footer__list {
+	/* display: flex;
 	color: var(--social-icons-footer-color);
-	gap: 10px;
+	gap: 10px; */
 	margin-top: 20px;
 	/* padding-bottom: 40px; */
 }
 
-.footer-title {
+.socials__title {
 	font-size: 14px;
 	line-height: 1.14;
 	letter-spacing: 0.03em;
@@ -619,44 +754,42 @@ img {
 	color: var(--color-text-white);
 }
 
-.socials-footer .socials-link {
+.socials__link--bg-light-gray {
 	background-color: var(--background-color-socials-icons-footer);
 }
 
-.footer-link {
+.socials__link--white {
 	color: var(--color-text-white);
 }
 
-.footer-link:hover,
-.footer-link:focus {
+.socials__link--white:hover,
+.socials__link--white:focus {
 	background-color: var(--background-color-socials-icons);
 }
 
-.form {
-	display: block;
-	/* margin-top: auto;
-	margin-bottom: auto; */
-	margin-left: auto;
 
+/* FORM */
+.subscribe-form {
+	display: block;
+	margin-left: auto;
 }
 
-.footer--flex {
-	display: flex;
+.footer__container {
 	align-items: baseline;
 }
 
-.form_field {
+.subscribe-form__field {
 	display: flex;
 	align-items: flex-end;
 	gap: 12px;
 }
-.form-label {
+.subscribe-form__label {
 	display: flex;
 
 	
 	flex-basis: 360px;
 }
-.form_title {
+.subscribe-form__title {
 	display: block;
 	font-weight: 700;
 	font-size: 14px;
@@ -668,7 +801,7 @@ img {
 	color: var(--color-text-white);
 }
 
-.form_input {
+.subscribe-form__input {
 	display: inline-flex;
 
 	font-family: 'Roboto';
@@ -691,23 +824,23 @@ img {
 
 }
 
-.form_input:focus {
+.subscribe-form__input:focus {
 	outline: none;
 	border: 1px solid  rgba(255, 255, 255, 0.3);
 	box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.3);
 }
 
-.form_input:not(:placeholder-shown):invalid {
+.subscribe-form__input:not(:placeholder-shown):invalid {
 	border: 1px solid  rgba(255, 255, 255, 0.3);
 	box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.3);
 }
 
-.form_input:not(:placeholder-shown):valid {
+.subscribe-form__input:not(:placeholder-shown):valid {
 	border: 1px solid var(--accent-text-color);
 	box-shadow: 0 0 4px 1px  var(--accent-text-color);
 }
 
-.form_btn {
+.subscribe-form__button {
 	position: relative;
 	max-width: 200px;
 	height: 50px;
@@ -722,7 +855,7 @@ img {
 	font-style: normal;
 }
 
-.send {
+.button__send {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
