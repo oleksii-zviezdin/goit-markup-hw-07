@@ -99,7 +99,7 @@
 				<div class="container">
 					<article class="benefits">
 						<h2 class="benefits__title visually-hidden">Наші переваги</h2>
-						<ul class="benefits__list list">
+						<ul class="benefits__list benefits__list--none-mark">
 							<li class="benefits__item">
 								<div class="benefits__icon">
 									<svg class="benefits__antenna" width="70" height="70">
@@ -158,7 +158,7 @@
 					<article class="work">
 						<h2 class="work__title">Чим ми займаємося</h2>
 	
-						<ul class="work__list list">
+						<ul class="work__list work__list--none-mark">
 							<li class="work__item">
 								<div class="work__card">
 									<img
@@ -205,7 +205,7 @@
 					<article class="team">						
 						<h2 class="team__title">Наша команда</h2>
 
-						<ul class="team__list list">
+						<ul class="team__list team__list--none-mark">
 							<li class="team__item">
 								<div class="card">
 									<img
@@ -503,7 +503,7 @@
 				<div class="container">
 					<article class="costumer">
 						<h2 class="costumer__title">Постійні клієнти</h2>
-						<ul class="costumer__list  list">
+						<ul class="costumer__list  costumer__list--none-mark">
 							<li class="costumer__item">
 								<a
 									class="costumer__link"
@@ -711,45 +711,45 @@
 
 		<div class="backdrop is-hidden" data-modal>
 			<div class="modal">
-				<button type="button" class="close-modal" data-modal-close>
-					<svg class="close" width="18" height="18">
+				<button type="button" class="modal__close-btn" data-modal-close>
+					<svg class="modal__close-icon" width="18" height="18">
 						<use href="./images/icons.svg#close"></use>
 					</svg>
 				</button>
-				<strong class="modal_title">Залиште свої дані, ми вам передзвонимо</strong>
-				<form class="modal-form" name="modal-form">
-					<div class="modal-form-group" role="group">
-						<label class="modal-form-label">
-							<span class="modal-form-span">Ім'я</span>
-							<input class="modal-form-field" type="text" name="user_name" placeholder=" " required>
-							<svg class="modal-form-icon" width="18" height="18">
+				<strong class="modal__title">Залиште свої дані, ми вам передзвонимо</strong>
+				<form class="order-form" name="order-form">
+					<div class="order-form modal__order-form" role="group">
+						<label class="order-form__label">
+							<span class="order-form__span">Ім'я</span>
+							<input class="order-form__field" type="text" name="user_name" placeholder=" " required>
+							<svg class="order-form__icon" width="18" height="18">
 							  <use href="./images/icons.svg#icon-person"></use>
 							</svg>
 						</label>
-						<label class="modal-form-label">
-							<span class="modal-form-span">Телефон</span>
-							<input class="modal-form-field" type="tel" name="user_phone" placeholder=" " required>
-							<svg class="modal-form-icon" width="18" height="18">
+						<label class="order-form__label">
+							<span class="order-form__span">Телефон</span>
+							<input class="order-form__field" type="tel" name="user_phone" placeholder=" " required>
+							<svg class="order-form__icon" width="18" height="18">
 							  <use href="./images/icons.svg#icon-phone"></use>
 							</svg>
 						</label>
-						<label class="modal-form-label">
-							<span class="modal-form-span">Пошта</span>
-							<input class="modal-form-field" type="email" name="user_email" placeholder=" " required>
-							<svg class="modal-form-icon" width="18" height="18">
+						<label class="order-form__label">
+							<span class="order-form__span">Пошта</span>
+							<input class="order-form__field" type="email" name="user_email" placeholder=" " required>
+							<svg class="order-form__icon" width="18" height="18">
 							  <use href="./images/icons.svg#icon-email"></use>
 							</svg>
 						</label>
-						<label class="modal-form-label">
-							<span class="modal-form-span">Коментар</span>
-							<textarea class="modal-form-massage" minlength="3" placeholder="Введіть текст" name="user_massage" required></textarea>
+						<label class="order-form__label">
+							<span class="order-form__span">Коментар</span>
+							<textarea class="order-form__massage modal__massage" minlength="3" placeholder="Введіть текст" name="user_massage" required></textarea>
 						</label>
-						<label class="modal-form-label checkbox">
-							<input class="modal-form-checkbox-agreement" type="checkbox" name="user_agreement" required>
-							<span class="modal-form-span checkbox">Погоджуюся з розсилкою та приймаю<a class="form-modal-link" href=""> Умови договору</a></span>							
+						<label class="order-form__label modal__checkbox">
+							<input class="order-form__agreement" type="checkbox" name="user_agreement" required>
+							<span class="order-form__span order-form__span--checkbox modal__checkbox">Погоджуюся з розсилкою та приймаю<a class="form-modal-link" href=""> Умови договору</a></span>							
 						</label>
 					</div>
-					<button class="modal-form-btn button" type="submit">Відправити</button>
+					<button class="button order-form__button" type="submit">Відправити</button>
 				</form>
 			</div>
 		</div>
