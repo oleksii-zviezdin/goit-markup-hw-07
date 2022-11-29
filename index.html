@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>WebStudio</title>
-		<!-- Modern Normailze -->
+		<!-- Modern Normalize -->
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
@@ -21,7 +21,8 @@
 			rel="stylesheet"
 		/>
 		<!-- Styles -->
-		<link rel="stylesheet" href="./css/styles.css" />
+		<link rel="stylesheet" href="./css/main.min.css"/>
+		<!-- <link rel="stylesheet" href="./css/styles.css" /> -->
 	</head>
 
 	<!-- BODY-->
@@ -30,13 +31,13 @@
 		<header class="header">
 			<div class="container container--flex header__container">
 				<!-- prettier-ignore -->
-				<a href="./index.html" class="logo logo--link">
+				<a href="./index.html" class="logo">
 					Web<span class="logo__text logo__text--black">Studio</span>
 				</a>
 
 				<!-- навігація по сайту -->
 				<nav class="nav header__nav">
-					<ul class="nav__list nav__list--none-mark">
+					<ul class="nav__list">
 						<li class="nav__item">
 							<a href="./index.html" class="nav__link header__link nav__link--current"
 								>Студія</a
@@ -55,12 +56,12 @@
 
 				<!-- зворотній зв'язок -->
 				<div class="contact">
-					<ul class="contact__list contact__list--none-mark">
+					<ul class="contact__list">
 						<li class="contact__item">
 							<a
 								href="mailto:info@devstudio.com"			class="contact__link header__contact header__link"
 							>
-								<svg class="contact__email" width="16" height="12">
+								<svg class="contact__icon-email" width="16" height="12">
 									<use href="./images/icons.svg#email"></use>
 								</svg>
 								info@devstudio.com
@@ -68,7 +69,7 @@
 						</li>
 						<li class="contact__item">
 							<a href="tel:+380961111111" class="contact__link header__contact header__link">
-								<svg class="contact__smartphone" width="10" height="16">
+								<svg class="contact__icon-smartphone" width="10" height="16">
 									<use href="./images/icons.svg#smartphone"></use>
 								</svg>
 								+38 096 111 11 11
@@ -89,7 +90,7 @@
 							<br />
 							вашого бізнесу
 						</h1>
-						<button type="button" class="button order" data-modal-open>Замовити послугу</button>
+						<button type="button" class="button hero__button order" data-modal-open>Замовити послугу</button>
 					</div>
 				</div>
 			</section>
@@ -158,7 +159,7 @@
 					<article class="work">
 						<h2 class="work__title">Чим ми займаємося</h2>
 	
-						<ul class="work__list work__list--none-mark">
+						<ul class="work__list">
 							<li class="work__item">
 								<div class="work__card">
 									<img
@@ -205,7 +206,7 @@
 					<article class="team">						
 						<h2 class="team__title">Наша команда</h2>
 
-						<ul class="team__list team__list--none-mark">
+						<ul class="team__list">
 							<li class="team__item">
 								<div class="card">
 									<img
@@ -503,7 +504,7 @@
 				<div class="container">
 					<article class="costumer">
 						<h2 class="costumer__title">Постійні клієнти</h2>
-						<ul class="costumer__list  costumer__list--none-mark">
+						<ul class="costumer__list">
 							<li class="costumer__item">
 								<a
 									class="costumer__link"
@@ -598,7 +599,7 @@
 						<a href="./index.html" class="logo logo--link footer__logo">
 								Web<span class="logo__text logo__text--white">Studio</span>
 							</a>
-						<ul class="contacts__list contacts__list--none-mark">
+						<ul class="contacts__list">
 							<li class="contacts__item">
 								<a
 									href="https://www.google.com/maps/place/Lesi+Ukrainky+Blvd,+26,+Kyiv,+Ukraina,+02000/@50.4265807,30.5361971,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4cf0e033ecbe9:0x57a4dffefec77da0!8m2!3d50.4265807!4d30.5383858"
@@ -691,6 +692,7 @@
 						</ul>
 					</div>
 				</div>
+
 				<div class="subscribe-form">
 					<strong class="subscribe-form__title">Підпишіться на розсилку</strong>
 					<form class="subscribe-form__field" name="subscribe_fomr">
@@ -699,14 +701,13 @@
 							<input class="subscribe-form__input" type="email" name="email" required placeholder="E-mail">			
 						</label>
 						<button type="submit" class="button subscribe-form__button">Підписатися
-							<svg class="button__send" width="24" height="24">
+							<svg class="button__icon-send" width="24" height="24">
 								<use href="./images/icons.svg#send"></use>
 							</svg>
 						</button>
 					</form>
 				</div>
-			</div>
-			
+			</div>			
 		</footer>
 
 		<div class="backdrop is-hidden" data-modal>
@@ -746,7 +747,7 @@
 						</label>
 						<label class="order-form__label modal__checkbox">
 							<input class="order-form__agreement" type="checkbox" name="user_agreement" required>
-							<span class="order-form__span order-form__span--checkbox modal__checkbox">Погоджуюся з розсилкою та приймаю<a class="form-modal-link" href=""> Умови договору</a></span>							
+							<span class="order-form__span order-form__span--checkbox modal__checkbox">Погоджуюся з розсилкою та приймаю<a class="order-form__link-agreement" href=""> Умови договору</a></span>							
 						</label>
 					</div>
 					<button class="button order-form__button" type="submit">Відправити</button>
